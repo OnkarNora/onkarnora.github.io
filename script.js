@@ -1,11 +1,11 @@
 const video = document.getElementById('video')
 
 Promise.all([
-  faceapi.nets.tinyFaceDetector.loadFromUri('https://github.com/OnkarNora/Real-time-face-recognization-with-face-api/tree/master/models'),
-  faceapi.nets.faceLandmark68Net.loadFromUri('https://github.com/OnkarNora/Real-time-face-recognization-with-face-api/tree/master/models'),
-  faceapi.nets.faceRecognitionNet.loadFromUri('https://github.com/OnkarNora/Real-time-face-recognization-with-face-api/tree/master/models'),
-  faceapi.nets.faceExpressionNet.loadFromUri('https://github.com/OnkarNora/Real-time-face-recognization-with-face-api/tree/master/models'),
-  faceapi.nets.ssdMobilenetv1.loadFromUri('https://github.com/OnkarNora/Real-time-face-recognization-with-face-api/tree/master/models')
+  faceapi.nets.tinyFaceDetector.loadFromDisk('./models'),
+  faceapi.nets.faceLandmark68Net.loadFromDisk('./models'),
+  faceapi.nets.faceRecognitionNet.loadFromDisk('./models'),
+  faceapi.nets.faceExpressionNet.loadFromDisk('./models'),
+  faceapi.nets.ssdMobilenetv1.loadFromDisk('./models')
 ]).then(startVideo)
 
 function startVideo() {
